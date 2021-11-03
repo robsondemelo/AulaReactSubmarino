@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { formataValor } from "../../components/Main";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export const Carrinho = () => {
 
