@@ -5,9 +5,11 @@ import { Categoria } from './pages/Categoria';
 import { Produto } from './pages/Produto';
 import { Carrinho } from './pages/Carrinho';
 import { Finalizar } from './pages/Finalizar';
+import { Pesquisa } from "./pages/Pesquisa";
 import { Erro } from './pages/Erro';
 
 import { Header, Footer } from "./components/Main";
+
 
 export const Routes = () =>  {
     return(
@@ -17,6 +19,7 @@ export const Routes = () =>  {
             <Switch>
                 <Route path={['/','/home']} exact component={Home}></Route>
                 <Route path={'/carrinho'} exact component={Carrinho}></Route>
+                <Route path={'/pesquisa'} exact component={Pesquisa}></Route>
                 <Route path={'/finalizar'} exact component={Finalizar}></Route>
                 <Route path={['/categoria', '/categoria/:id']} exact component={Categoria}></Route>
                 <Route path={['/produto', '/produto/:id']} exact component={Produto}></Route>

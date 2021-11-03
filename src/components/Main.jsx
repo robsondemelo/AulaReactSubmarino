@@ -43,6 +43,10 @@ export const Header = () => {
                         <li className="nav-item">
                             <Link to="/carrinho" className="nav-link">Carrinho</Link>
                         </li>
+
+                        <li className="nav-item">
+                            <Link to="/pesquisa" className="nav-link">Pesquisa SEO</Link>
+                        </li>
                         
 
                     </ul>
@@ -58,8 +62,16 @@ export const Footer = () => {
     return (
         <>
             <footer className="bg-primary">
-                <p className="text-center">Desenvolvido por Robson Melo</p>
+                <p className="text-center">
+                    Desenvolvido por Robson Melo<br/>
+                    RA:11454<br/>
+                    Unialfa 2021</p>
             </footer>
         </>
     )
+}
+
+export const formataValor = (valor) => {
+    valor = parseFloat(valor);
+    return valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 }

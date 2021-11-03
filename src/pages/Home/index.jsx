@@ -4,6 +4,11 @@ import axios from 'axios';
 
 export const Home = () => {
 
+    function formataValor(valor) {
+        valor = parseFloat(valor);
+        return valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    }
+
     const [produtos, getProdutos] = useState([]);
 
     useEffect ( () => {
@@ -20,8 +25,17 @@ export const Home = () => {
                 { produtos.map((item, index) => (
                     <div className="col-12 col-md-4 text-center">
                         <div className="card">
-                            <img src={item.imagemp} className="w100"></img>
+                            <img src={item.imagemp} className="w100" alt={item.produto}></img>
                             <h5>{item.produto}</h5>
+                            {item.promo != 0 ?
+                                <div>
+                                De: <span className="corte">{formataValor(item.valor)}</span><br/>
+                                Por: <span className="valor">{formataValor(item.promo)}</span>
+                                </div>
+                            :
+                                <p className="valor">{formataValor(item.valor)}</p>
+
+                            }
                             <Link to={'/produto/'+item.id} className="btn btn-success">Detalhes</Link>
                         </div>
                     </div>
